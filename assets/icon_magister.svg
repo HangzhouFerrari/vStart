@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <g id="icon_magister" transform="translate(-2433 -926)">
+    <rect id="Rectangle_20" data-name="Rectangle 20" width="256" height="256" transform="translate(2433 926)" fill="rgba(0,0,0,0)"/>
+    <g id="Magister" transform="translate(2425.5 965.755)">
+      <rect id="Rectangle_15" data-name="Rectangle 15" width="42.91" height="42.91" rx="21.455" transform="translate(220.59 130.08)" fill="rgba(255,255,255,0.6)"/>
+      <g id="Group_11" data-name="Group 11">
+        <path id="Path_157" data-name="Path 157" d="M35.226,3.638A56.118,56.118,0,0,1,51.07,4.776l50.361,78.55q25.514-39.046,50.36-78.55a28.134,28.134,0,0,1,15.844,0q14.88,82.983,28.292,166.207H157.45q-6.5-42.674-13.014-85.381l-35.082,54.643a26.841,26.841,0,0,1-15.278,0Q75.828,113.217,58.426,85.6,52,127.793,44.846,169.845a153.829,153.829,0,0,1-37.346,0Q20.8,86.715,35.226,3.638Z" fill="#fff" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>
