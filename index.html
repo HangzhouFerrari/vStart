@@ -243,6 +243,23 @@ body.reorder-mode .reorder-bar{display:flex}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 #bgDim{position:fixed;inset:0;z-index:1;pointer-events:none;background:rgba(0,0,0,0);transition:background 0.3s ease}
 .logo-doodle{box-shadow: inset -1px -1px 0 var(--gi1), inset 1px 1px 0 var(--gi2), 0 4px 20px var(--gshadow)}
+
+/* shake animation voor verwijder modus */
+@keyframes shake {
+  0%, 100% { transform: rotate(-3deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+body.edit-active .tile-icon {
+  animation: shake 0.6s infinite;
+}
+
+/* smooth animatie voor reorder modus */
+body.reorder-mode .tile {
+  transition: transform 0.2s ease-out;
+}
 </style>
 <body>
 <div id="bgLayer"></div>
