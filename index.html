@@ -1144,6 +1144,8 @@ document.getElementById('btnFetchWeather').addEventListener('click',()=>{const c
 async function fetchWeather(city){try{showToast('Weer ophalen...');const gr=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1`);const gd=await gr.json();if(!gd.results||!gd.results[0]){showToast('Stad niet gevonden');return;}const{latitude,longitude}=gd.results[0];const wr=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`);const wd=await wr.json();const cache={temp:Math.round(wd.current_weather.temperature),code:wd.current_weather.weathercode};cfg.weatherCache=cache;saveC();renderWeather(cache);showToast(`Weer: ${cache.temp}°C`);}catch{showToast('Ophalen mislukt');}}
 function renderWeather(c){const icons={0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'❄️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️'};document.getElementById('wxIco').textContent=icons[c.code]||'🌡️';document.getElementById('wxT').textContent=c.temp+'°C';}
 if(cfg.glance.weather&&cfg.weatherCity){if(cfg.weatherCache)renderWeather(cfg.weatherCache);else fetchWeather(cfg.weatherCity);}
+// Auto-refresh weer elke 10 minuten
+setInterval(()=>{if(cfg.glance.weather&&cfg.weatherCity)fetchWeather(cfg.weatherCity);},600000);
 
 // ══════════════════════════════════════════
 //   BACKUP & RESTORE
