@@ -149,10 +149,11 @@ body.reorder-mode .tile{cursor:grab}body.reorder-mode .tile:hover .tile-icon{tra
 .modal-body::-webkit-scrollbar{width:4px}.modal-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:10px}
 .tab-pane{display:none}.tab-pane.active{display:block}
 .sl{font-size:.67rem;font-weight:700;color:var(--tm);letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px;margin-top:16px}.sl:first-child{margin-top:0}
+#bgCategoriesContainer>.sl:not(:first-child){margin-top:24px}
 
 /* bg grid */
 .bg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.bg-th{aspect-ratio:16/10;border-radius:12px;cursor:pointer;overflow:hidden;position:relative;border:2.5px solid transparent;transition:border-color .2s,transform .18s;background-size:cover;background-position:center}
+.bg-th{aspect-ratio:16/10;border-radius:12px;cursor:pointer;overflow:hidden;position:relative;border:none;transition:border-color .2s,transform .18s;background-size:cover;background-position:center}
 .bg-th:hover{transform:scale(1.04)}.bg-th.sel{border-color:rgba(255,255,255,.85)}
 .bg-th.sel::after{content:'✓';position:absolute;top:5px;right:6px;font-size:11px;font-weight:700;color:white;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .bg-th-lbl{position:absolute;bottom:0;left:0;right:0;font-size:.6rem;font-weight:600;color:rgba(255,255,255,.9);background:linear-gradient(transparent,rgba(0,0,0,.42));padding:10px 5px 4px;border-radius:0 0 9px 9px}
@@ -186,7 +187,7 @@ input[type=range].ui-range::-webkit-slider-thumb{-webkit-appearance:none;width:1
 .tog-row{display:flex;align-items:center;justify-content:space-between;background:var(--ic);border-radius:12px;padding:10px 12px;margin-top:6px}
 .tog-lbl{font-size:.82rem;font-weight:600;color:var(--tp)}.tog-desc{font-size:.66rem;color:var(--tm);margin-top:2px}
 .tog{width:40px;height:23px;border-radius:12px;background:var(--toff);border:none;cursor:pointer;position:relative;transition:background .22s;flex-shrink:0}
-.tog::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;transition:transform .24s cubic-bezier(.34,1.56,.64,1);box-shadow:0 1px 4px rgba(0,0,0,.22)}
+.tog::after{content:'';position:absolute;top:3px;left:3px;width:17px;height:17px;border-radius:50%;background:white;transition:transform .24s cubic-bezier(.34,1.56,.64,1);}
 .tog.on::after{transform:translateX(17px)}
 
 /* select */
@@ -320,6 +321,17 @@ body.reorder-mode .tile {
       <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path data-name="Rectangle 20" fill="rgba(0,0,0,0)" d="M0 0h256v256H0z"/><g data-name="Group 15"><path data-name="Path 181" d="M190.628 256H66.231a22.12 22.12 0 0 1-15.521-6.256 20.93 20.93 0 0 1-6.429-15.1L27.774 72.076a20.93 20.93 0 0 1 6.429-15.1 22.12 22.12 0 0 1 15.521-6.259h155.345a22.12 22.12 0 0 1 15.521 6.256 20.93 20.93 0 0 1 6.429 15.1l-14.445 162.568a20.93 20.93 0 0 1-6.429 15.1A22.12 22.12 0 0 1 190.628 256M162.914 74.908a12.03 12.03 0 0 0-12.061 11.654l-4.635 132.749a12.09 12.09 0 0 0 11.646 12.489q.201.008.429.008a12.025 12.025 0 0 0 12.06-11.654l4.636-132.749a12.075 12.075 0 0 0-11.646-12.488 10 10 0 0 0-.429-.009m-69.829 0q-.215-.002-.429.007a12.09 12.09 0 0 0-11.646 12.49l4.635 132.749a12.025 12.025 0 0 0 12.059 11.654q.23.002.43-.008a12.09 12.09 0 0 0 11.647-12.489l-4.635-132.749a12.026 12.026 0 0 0-12.061-11.654" fill="#fff"/><path data-name="Path 179" d="M30.793 41.057A8.453 8.453 0 0 1 22.34 32.6a16.906 16.906 0 0 1 16.906-16.9h27.773A15.7 15.7 0 0 1 82.718 0h90.566a15.7 15.7 0 0 1 15.7 15.7h27.774a16.906 16.906 0 0 1 16.902 16.9 8.45 8.45 0 0 1-8.452 8.453Z" fill="#fff"/><path data-name="Path 180" d="M157.86 231.8a12.075 12.075 0 0 1-11.646-12.489l4.639-132.746a12.076 12.076 0 0 1 24.137.843l-4.637 132.746a12.076 12.076 0 0 1-12.061 11.654q-.212 0-.432-.008m-72.214-11.646L81.01 87.405a12.075 12.075 0 0 1 24.136-.84l4.636 132.749a12.075 12.075 0 0 1-11.647 12.489c-.143 0-.287.007-.429.007a12.076 12.076 0 0 1-12.06-11.656" fill="rgba(255,255,255,0.2)"/></g></svg>
       <span>Snelkoppeling verwijderen<span class="ov-btn-desc">Klik op ✕ op een tegel</span></span>
     </button>
+    <div style="height:1px;background:var(--div);margin:8px 0"></div>
+    <div style="display:flex;gap:8px">
+      <button class="ov-btn" id="btnUndo" style="flex:1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="M65 32a33 33 0 0 1 33 33v24h102a15 15 0 0 1 15 15v112a15 15 0 0 1-15 15H45a15 15 0 0 1-15-15V89a33 33 0 0 1 35-57Z" fill="rgba(255,255,255,0.2)"/><path d="M98 32a33 33 0 0 0-33 33v102a15 15 0 0 0 15 15h120a15 15 0 0 0 15-15V97a15 15 0 0 0-15-15H83V65a33 33 0 0 0-33-33Z" fill="#fff"/></svg>
+        <span>Ongedaan maken</span>
+      </button>
+      <button class="ov-btn" id="btnRedo" style="flex:1;opacity:.4;pointer-events:none" disabled>
+        <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="M191 32a33 33 0 0 0-33 33v24H56a15 15 0 0 0-15 15v112a15 15 0 0 0 15 15h120a15 15 0 0 0 15-15V89a33 33 0 0 0-35-57Z" fill="rgba(255,255,255,0.2)"/><path d="M158 32a33 33 0 0 1 33 33v102a15 15 0 0 1-15 15H56a15 15 0 0 1-15-15V97a15 15 0 0 1 15-15h120V65a33 33 0 0 1 33-33Z" fill="#fff"/></svg>
+        <span>Gedaan maken</span>
+      </button>
+    </div>
     <div class="add-form" id="addForm">
       <input class="fi" id="inName" type="text" placeholder="Naam (bijv. YouTube)">
       <input class="fi" id="inUrl" type="url" placeholder="URL (bijv. https://youtube.com)">
@@ -377,14 +389,13 @@ body.reorder-mode .tile {
               <input type="range" class="ui-range" id="bgDimSlider" min="0" max="80" value="0">
               <span>Donker</span>
           </div>
-          <div style="font-size:.68rem;color:var(--tm);margin-top:6px">Als je elementen niet goed kan zien, probeer dan de achtergrond te dimmen.</div>
-          <div class="sl" id="bgModeLabel">Achtergronden</div>
-          <div class="bg-grid" id="bgGrid"></div>
+          <div style="font-size:.68rem;color:var(--tm);margin-top:6px;margin-bottom:16px">Als je elementen niet goed kan zien, probeer dan de achtergrond te dimmen.</div>
+          <div id="bgCategoriesContainer"></div>
+          <div class="sl">Eigen achtergrond</div>
+          <div class="upload-zone" id="uploadZone"><p>Klik of sleep een afbeelding<span>PNG, JPG, WEBP — max 10 MB</span></p></div>
+          <input type="file" id="bgFileInput" accept="image/*" style="display:none">
           <div class="sl">Recente uploads</div>
           <div class="recent-grid" id="recentGrid"></div>
-          <div class="sl">Eigen achtergrond</div>
-          <div class="upload-zone" id="uploadZone"><p>🖼️ Klik of sleep een afbeelding<span>PNG, JPG, WEBP — max 10 MB</span></p></div>
-          <input type="file" id="bgFileInput" accept="image/*" style="display:none">
         </div>
 
         <div class="tab-pane" id="tab-colors">
@@ -456,7 +467,7 @@ body.reorder-mode .tile {
         <div class="tab-pane" id="tab-info">
           <div class="sl">Over</div>
           <div class="ic-g2">
-            <div class="icard"><div class="icard-t">Versie</div><div class="icard-v"><span class="ver-badge">✦ v3.0 beta</span></div></div>
+            <div class="icard"><div class="icard-t">Versie</div><div class="icard-v"><span class="ver-badge">✦ v3.0 Release Canidate</span></div></div>
             <div class="icard"><div class="icard-t">Snelkoppelingen</div><div class="icard-v" id="infoCount">—</div></div>
             <div class="icard"><div class="icard-t">Opslag</div><div class="icard-v" id="infoStorage">—</div></div>
             <div class="icard"><div class="icard-t">Buildnummer</div><div class="icard-v">BP.23022026.VDv3</div></div>
@@ -514,17 +525,43 @@ body.reorder-mode .tile {
 //   WALLPAPERS
 // ══════════════════════════════════════════
 const WPS=[
-  {id:'sky',      label:'Lucht',      light:'linear-gradient(135deg,#74b3d8 0%,#a8c8e8 30%,#c5d8f0 60%,#b8d4e8 100%)',   dark:'linear-gradient(135deg,#1a3a52 0%,#1e4a65 30%,#244d70 60%,#1a4060 100%)'},
-  {id:'sunset',   label:'Zonsonder.', light:'linear-gradient(135deg,#f7a07a 0%,#f4c38a 30%,#f7dba0 60%,#f0a090 100%)',   dark:'linear-gradient(135deg,#4a200e 0%,#5e2e14 30%,#6c3018 60%,#4a2216 100%)'},
-  {id:'rose',     label:'Roos',       light:'linear-gradient(135deg,#e8a0b8 0%,#f0c0d0 30%,#f8d8e0 60%,#e0a0c0 100%)',   dark:'linear-gradient(135deg,#42101e 0%,#561826 30%,#60202e 60%,#421220 100%)'},
-  {id:'peach',    label:'Perzik',     light:'linear-gradient(135deg,#f8c8a0 0%,#fcd8b8 30%,#feecd8 60%,#f8c8a8 100%)',   dark:'linear-gradient(135deg,#3e2008 0%,#522a0e 30%,#5c2e12 60%,#402210 100%)'},
-  {id:'mint',     label:'Mint',       light:'linear-gradient(135deg,#6abfa0 0%,#8dd4be 30%,#b8e8da 60%,#78c8a8 100%)',   dark:'linear-gradient(135deg,#0c2e20 0%,#103c28 30%,#144430 60%,#0e3424 100%)'},
-  {id:'lavender', label:'Lavendel',   light:'linear-gradient(135deg,#9a8abf 0%,#b8a8d8 30%,#d4c8ec 60%,#a898c8 100%)',   dark:'linear-gradient(135deg,#1e1630 0%,#28203e 30%,#302848 60%,#221a36 100%)'},
-  {id:'forest',   label:'Bos',        light:'linear-gradient(135deg,#3d6b4f 0%,#6aab7a 30%,#a8d4a0 60%,#5a8c6a 100%)',   dark:'linear-gradient(135deg,#0d2016 0%,#112a1c 30%,#153022 60%,#0f2418 100%)'},
-  {id:'sand',     label:'Zand',       light:'linear-gradient(135deg,#d4b896 0%,#e8d0b0 30%,#f4e4cc 60%,#dcc4a0 100%)',   dark:'linear-gradient(135deg,#2e2010 0%,#3c2a16 30%,#44301c 60%,#342216 100%)'},
-];
 
-const ACCENTS=['#74b3d8','#6abfa0','#e07898','#e0a060','#9070c8','#e07060','#88a870','#7090b0'];
+  // ── Collecties ──
+  {id:'col_velios', cat:'Collecties', label:'Velios 3.0',      image:'assets/wallpapers/col_velios.png'},
+  {id:'col_velios_dark', cat:'Collecties', label:'Velios 3.0 Donker',      image:'assets/wallpapers/col_velios_dark.png'},
+
+  // ── Natuur ──
+  {id:'col_mountains', cat:'Natuur', label:'Bergen',      image:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop'},
+  {id:'col_forest',    cat:'Natuur', label:'Bos',         image:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop'},
+  {id:'col_ocean',     cat:'Natuur', label:'Oceaan',      image:'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&h=1080&fit=crop'},
+  {id:'col_sunset',    cat:'Natuur', label:'Zonsondergang', image:'https://images.unsplash.com/photo-1495567720989-cebdbdd97913?w=1920&h=1080&fit=crop'},
+  {id:'col_stars',     cat:'Natuur', label:'Sterrenhemel', image:'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&h=1080&fit=crop'},
+  {id:'col_aurora',    cat:'Natuur', label:'Aurora',      image:'https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?w=1920&h=1080&fit=crop'},
+
+  // ── Kleur ──
+  {id:'sky',      cat:'Kleur', label:'Lucht',      light:'linear-gradient(135deg,#74b3d8 0%,#a8c8e8 30%,#c5d8f0 60%,#b8d4e8 100%)',   dark:'linear-gradient(135deg,#1a3a52 0%,#1e4a65 30%,#244d70 60%,#1a4060 100%)'},
+  {id:'sunset',   cat:'Kleur', label:'Zonsonder.', light:'linear-gradient(135deg,#f7a07a 0%,#f4c38a 30%,#f7dba0 60%,#f0a090 100%)',   dark:'linear-gradient(135deg,#4a200e 0%,#5e2e14 30%,#6c3018 60%,#4a2216 100%)'},
+  {id:'rose',     cat:'Kleur', label:'Roos',       light:'linear-gradient(135deg,#e8a0b8 0%,#f0c0d0 30%,#f8d8e0 60%,#e0a0c0 100%)',   dark:'linear-gradient(135deg,#42101e 0%,#561826 30%,#60202e 60%,#421220 100%)'},
+  {id:'peach',    cat:'Kleur', label:'Perzik',     light:'linear-gradient(135deg,#f8c8a0 0%,#fcd8b8 30%,#feecd8 60%,#f8c8a8 100%)',   dark:'linear-gradient(135deg,#3e2008 0%,#522a0e 30%,#5c2e12 60%,#402210 100%)'},
+  {id:'mint',     cat:'Kleur', label:'Mint',       light:'linear-gradient(135deg,#6abfa0 0%,#8dd4be 30%,#b8e8da 60%,#78c8a8 100%)',   dark:'linear-gradient(135deg,#0c2e20 0%,#103c28 30%,#144430 60%,#0e3424 100%)'},
+  {id:'lavender', cat:'Kleur', label:'Lavendel',   light:'linear-gradient(135deg,#9a8abf 0%,#b8a8d8 30%,#d4c8ec 60%,#a898c8 100%)',   dark:'linear-gradient(135deg,#1e1630 0%,#28203e 30%,#302848 60%,#221a36 100%)'},
+  {id:'forest',   cat:'Kleur', label:'Bos',        light:'linear-gradient(135deg,#3d6b4f 0%,#6aab7a 30%,#a8d4a0 60%,#5a8c6a 100%)',   dark:'linear-gradient(135deg,#0d2016 0%,#112a1c 30%,#153022 60%,#0f2418 100%)'},
+  {id:'sand',     cat:'Kleur', label:'Zand',       light:'linear-gradient(135deg,#d4b896 0%,#e8d0b0 30%,#f4e4cc 60%,#dcc4a0 100%)',   dark:'linear-gradient(135deg,#2e2010 0%,#3c2a16 30%,#44301c 60%,#342216 100%)'},
+  {id:'neon_cyber',   cat:'Kleur', label:'Cyber',      light:'linear-gradient(135deg,#0d0221 0%,#1a0533 30%,#2d0a4e 60%,#3d1060 100%)',   dark:'linear-gradient(135deg,#050010 0%,#0d0221 30%,#1a0533 60%,#250840 100%)'},
+  {id:'neon_acid',    cat:'Kleur', label:'Acid',        light:'linear-gradient(135deg,#00ff88 0%,#00e5ff 40%,#7b2fff 100%)',               dark:'linear-gradient(135deg,#003322 0%,#003344 40%,#1a0055 100%)'},
+  {id:'neon_hotpink', cat:'Kleur', label:'Hot Pink',    light:'linear-gradient(135deg,#ff006e 0%,#fb5607 40%,#ffbe0b 100%)',               dark:'linear-gradient(135deg,#3d001a 0%,#3d1000 40%,#3d2d00 100%)'},
+  {id:'neon_electric',cat:'Kleur', label:'Electric',    light:'linear-gradient(135deg,#00d4ff 0%,#0066ff 50%,#6600ff 100%)',               dark:'linear-gradient(135deg,#003340 0%,#001a40 50%,#1a0040 100%)'},
+  {id:'nat_dawn',   cat:'Kleur', label:'Dageraad',   light:'linear-gradient(160deg,#ffecd2 0%,#fcb69f 40%,#ff9a9e 100%)',               dark:'linear-gradient(160deg,#3d2a1a 0%,#3d2010 40%,#3d1018 100%)'},
+  {id:'nat_ocean',  cat:'Kleur', label:'Oceaan',      light:'linear-gradient(160deg,#a8edea 0%,#43b8c0 40%,#2877b8 100%)',               dark:'linear-gradient(160deg,#0a2a2a 0%,#0a2428 40%,#071a30 100%)'},
+  {id:'nat_aurora', cat:'Kleur', label:'Aurora',      light:'linear-gradient(160deg,#a8ff78 0%,#78ffd6 40%,#4facfe 100%)',               dark:'linear-gradient(160deg,#0d2200 0%,#003322 40%,#001a3d 100%)'},
+  {id:'nat_desert', cat:'Kleur', label:'Woestijn',    light:'linear-gradient(160deg,#f9d976 0%,#f39f86 40%,#c0392b 100%)',               dark:'linear-gradient(160deg,#3d3000 0%,#3d1a0d 40%,#2d0800 100%)'},
+  {id:'drk_midnight',cat:'Kleur', label:'Middernacht', light:'linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)',              dark:'linear-gradient(135deg,#0a0a15 0%,#0b1020 50%,#071a30 100%)'},
+  {id:'drk_obsidian',cat:'Kleur', label:'Obsidiaan',   light:'linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 50%,#2d2d2d 100%)',             dark:'linear-gradient(135deg,#050505 0%,#0d0d0d 50%,#1a1a1a 100%)'},
+  {id:'drk_charcoal',cat:'Kleur', label:'Houtskool',   light:'linear-gradient(135deg,#2c3e50 0%,#3d5166 50%,#4a6278 100%)',              dark:'linear-gradient(135deg,#141e28 0%,#1e2d3d 50%,#243044 100%)'},
+  {id:'drk_plum',    cat:'Kleur', label:'Pruim',        light:'linear-gradient(135deg,#2d1b4e 0%,#3d2460 50%,#4e2d72 100%)',             dark:'linear-gradient(135deg,#160d26 0%,#1e1230 50%,#271840 100%)'},
+  ];
+
+const ACCENTS=['#0062ff','#ff002b','#00e658','#74b3d8','#6abfa0','#e07898','#e0a060','#9070c8','#e07060','#88a870','#7090b0'];
 const OP_STEPS=[{l:'Laag',v:.10},{l:'Normaal',v:.28},{l:'Hoog',v:.50},{l:'Massief',v:.78}];
 
 const SURL={google:q=>`https://www.google.com/search?q=${e(q)}`,bing:q=>`https://www.bing.com/search?q=${e(q)}`,duckduckgo:q=>`https://duckduckgo.com/?q=${e(q)}`,brave:q=>`https://search.brave.com/search?q=${e(q)}`,ecosia:q=>`https://www.ecosia.org/search?q=${e(q)}`,startpage:q=>`https://www.startpage.com/search?q=${e(q)}`};
@@ -579,7 +616,7 @@ const LIBRARY=[
   {cat:'Leren',entries:[
     {name:'Wikipedia',    icon:fav('wikipedia.org'),       url:'https://wikipedia.org'},
     {name:'Quizlet',      icon:fav('quizlet.com'),         url:'https://quizlet.com',path:'Assets/Icons/Light/Default/quizlet.png'},
-    {name:'WRTS/StudyGo', icon:fav('studygo.com'),         url:'https://studygo.com/nl/learn/recent',path:'Assets/Icons/Light/Default/wrts.png'},
+    {name:'StudyGo',      icon:fav('studygo.com'),         url:'https://studygo.com/nl/learn/recent',path:'Assets/Icons/Light/Default/wrts.png'},
     {name:'Duolingo',     icon:fav('duolingo.com'),        url:'https://duolingo.com'},
     {name:'Khan Academy', icon:fav('khanacademy.org'),     url:'https://khanacademy.org'},
     {name:'ChatGPT',      icon:fav('chatgpt.com'),         url:'https://chatgpt.com',path:'Assets/Icons/Light/Default/chatgpt.png'},
@@ -623,8 +660,8 @@ const DEFAULT_SITES=[
 // ══════════════════════════════════════════
 let sites=JSON.parse(localStorage.getItem('sp_s6')||'null')||DEFAULT_SITES.map(s=>({...s}));
 let cfg  =JSON.parse(localStorage.getItem('sp_c6')||'null')||{
-  bg:'sky',bgCustom:null,recentUploads:[],
-  accent:'#74b3d8',uiOpacity:100,tileOpacity:.28,syncOpacity:true,
+  bg:'col_velios',bgCustom:null,recentUploads:[],
+  accent:'#0062ff',uiOpacity:100,tileOpacity:.28,syncOpacity:true,
   dark:false,duotone:false,accentUI:false,
   searchProvider:'google',aiProvider:'chatgpt',newTab:true,aiMode:false,
   glance:{time:true,date:true,weather:false,h24:true,week:false},
@@ -639,6 +676,41 @@ if(cfg.glance.week===undefined)cfg.glance.week=false;
 
 function saveS(){localStorage.setItem('sp_s6',JSON.stringify(sites))}
 function saveC(){localStorage.setItem('sp_c6',JSON.stringify(cfg))}
+
+// ══════════════════════════════════════════
+//   UNDO/REDO
+// ══════════════════════════════════════════
+let undoStack=[],redoStack=[],lastEditTime=0;
+const EDIT_TIMEOUT=60000; // 1 minuut
+function canUndo(){return undoStack.length>0&&(Date.now()-lastEditTime)<EDIT_TIMEOUT;}
+function canRedo(){return redoStack.length>0&&(Date.now()-lastEditTime)<EDIT_TIMEOUT;}
+function saveSnapshot(){
+  undoStack.push(JSON.parse(JSON.stringify(sites)));
+  redoStack=[];
+  lastEditTime=Date.now();
+  updateUndoRedoButtons();
+  // Limit stack to 20 entries
+  if(undoStack.length>20)undoStack.shift();
+}
+function updateUndoRedoButtons(){
+  const canU=canUndo(),canR=canRedo();
+  const btnUndo=document.getElementById('btnUndo');
+  const btnRedo=document.getElementById('btnRedo');
+  if(btnUndo){btnUndo.style.opacity=canU?'1':'.4';btnUndo.disabled=!canU;btnUndo.style.pointerEvents=canU?'auto':'none';}
+  if(btnRedo){btnRedo.style.opacity=canR?'1':'.4';btnRedo.disabled=!canR;btnRedo.style.pointerEvents=canR?'auto':'none';}
+}
+function undo(){
+  if(!canUndo())return;
+  redoStack.push(JSON.parse(JSON.stringify(sites)));
+  sites=undoStack.pop();
+  saveS();renderGrid();updateUndoRedoButtons();showToast('Ongedaan gemaakt');
+}
+function redo(){
+  if(!canRedo())return;
+  undoStack.push(JSON.parse(JSON.stringify(sites)));
+  sites=redoStack.pop();
+  saveS();renderGrid();updateUndoRedoButtons();showToast('Gedaan gemaakt');
+}
 function getFavUrl(url){try{return`https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=128`}catch{return''}}
 function h2r(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return`rgba(${r},${g},${b},${a})`}
 function weekNum(d){const s=new Date(Date.UTC(d.getFullYear(),0,1));return Math.ceil(((d-s)/86400000+s.getUTCDay()+1)/7)}
@@ -692,7 +764,11 @@ function computeGlassVars(){
 function applyBg(){
   const bl=document.getElementById('bgLayer');
   if(cfg.bgCustom){bl.style.backgroundImage=`url(${cfg.bgCustom})`;bl.style.opacity='1';document.body.style.background='#111';}
-  else{const wp=WPS.find(w=>w.id===cfg.bg)||WPS[0];bl.style.backgroundImage='';bl.style.opacity='0';document.body.style.background=cfg.dark?wp.dark:wp.light;document.body.style.backgroundAttachment='fixed';}
+  else{
+    const wp=WPS.find(w=>w.id===cfg.bg)||WPS[0];
+    if(wp.image){bl.style.backgroundImage=`url(${wp.image})`;bl.style.opacity='1';document.body.style.background='#111';}
+    else{bl.style.backgroundImage='';bl.style.opacity='0';document.body.style.background=cfg.dark?wp.dark:wp.light;document.body.style.backgroundAttachment='fixed';}
+  }
 }
 function applyDark(){document.body.classList.toggle('dark',cfg.dark);applyBg();buildBgGrid();computeGlassVars();}
 function applyAccent(){document.documentElement.style.setProperty('--accent',cfg.accent);document.querySelectorAll('.duo').forEach(el=>el.style.background=cfg.accent);computeGlassVars();refreshTogColors();}
@@ -738,7 +814,7 @@ function renderGrid(){
     gridEl.appendChild(tile);
   });
 }
-function removeSite(i){sites.splice(i,1);saveS();renderGrid();showToast('Snelkoppeling verwijderd');}
+function removeSite(i){saveSnapshot();sites.splice(i,1);saveS();renderGrid();showToast('Snelkoppeling verwijderd');}
 window.addEventListener('resize',()=>renderGrid());
 
 // ══════════════════════════════════════════
@@ -749,7 +825,7 @@ function onDS(e){if(!document.body.classList.contains('reorder-mode')){e.prevent
 function onDE(){document.querySelectorAll('.tile').forEach(t=>t.classList.remove('dragging','drag-over'));dSrc=null;}
 function onDO(e){if(!dSrc||dSrc===this)return;e.preventDefault();document.querySelectorAll('.tile').forEach(t=>t.classList.remove('drag-over'));this.classList.add('drag-over');}
 function onDL(){this.classList.remove('drag-over');}
-function onDR(e){if(!dSrc||dSrc===this)return;e.preventDefault();const f=+dSrc.dataset.index,t=+this.dataset.index,m=sites.splice(f,1)[0];sites.splice(t,0,m);saveS();renderGrid();}
+function onDR(e){if(!dSrc||dSrc===this)return;e.preventDefault();saveSnapshot();const f=+dSrc.dataset.index,t=+this.dataset.index,m=sites.splice(f,1)[0];sites.splice(t,0,m);saveS();renderGrid();}
 
 // ══════════════════════════════════════════
 //   SEARCH
@@ -766,7 +842,7 @@ document.getElementById('btnAI').addEventListener('click',()=>{cfg.aiMode=!cfg.a
 // ══════════════════════════════════════════
 const editOv=document.getElementById('editOv'),editOvBox=document.getElementById('editOvBox');
 let reorderOn=false,removeOn=false;
-function openEdit(){editOv.style.display='block';editOvBox.classList.remove('ani-out');editOvBox.classList.add('ani-in');setTimeout(()=>editOv.classList.add('active'),10);}
+function openEdit(){editOv.style.display='block';editOvBox.classList.remove('ani-out');editOvBox.classList.add('ani-in');setTimeout(()=>editOv.classList.add('active'),10);updateUndoRedoButtons();}
 function closeEdit(){editOvBox.classList.remove('ani-in');editOvBox.classList.add('ani-out');editOv.classList.remove('active');setTimeout(()=>{editOv.style.display='none';editOvBox.classList.remove('ani-out');},240);document.getElementById('addForm').classList.remove('open');document.getElementById('btnAdd').classList.remove('active');}
 document.getElementById('btnEdit').addEventListener('click',openEdit);
 document.getElementById('btnCloseEdit').addEventListener('click',closeEdit);
@@ -780,13 +856,15 @@ document.getElementById('btnSubAdd').addEventListener('click',()=>{
   if(!nm||!url){showToast('Vul naam én URL in');return;}
   if(!/^https?:\/\//i.test(url))url='https://'+url;
   if(sites.length>=20){showToast('Grid is vol (max 20)');return;}
-  sites.push({name:nm,url,icon:getFavUrl(url)});saveS();renderGrid();
+  saveSnapshot();sites.push({name:nm,url,icon:getFavUrl(url)});saveS();renderGrid();
   document.getElementById('inName').value='';document.getElementById('inUrl').value='';
   document.getElementById('addForm').classList.remove('open');document.getElementById('btnAdd').classList.remove('active');
   closeEdit();showToast(`"${nm}" toegevoegd!`);
 });
 [document.getElementById('inName'),document.getElementById('inUrl')].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('btnSubAdd').click();}));
 document.getElementById('btnOpenLib').addEventListener('click',()=>{closeEdit();openLib();});
+document.getElementById('btnUndo').addEventListener('click',undo);
+document.getElementById('btnRedo').addEventListener('click',redo);
 
 // ══════════════════════════════════════════
 //   SETTINGS MODAL — sidebar tabs
@@ -817,14 +895,27 @@ document.querySelectorAll('#setNav .stab, #setNav+*+* .stab, .modal-sidebar .sta
 
 // BG GRID
 function buildBgGrid(){
-  const el=document.getElementById('bgGrid');el.innerHTML='';
-  document.getElementById('bgModeLabel').textContent=cfg.dark?'Kleuren':'Kleuren';
-  WPS.forEach(wp=>{
-    const th=document.createElement('div');th.className='bg-th';th.style.background=cfg.dark?wp.dark:wp.light;
-    th.innerHTML=`<div class="bg-th-lbl">${wp.label}</div>`;
-    if(cfg.bg===wp.id&&!cfg.bgCustom)th.classList.add('sel');
-    th.addEventListener('click',()=>{cfg.bg=wp.id;cfg.bgCustom=null;saveC();applyBg();document.querySelectorAll('.bg-th,.recent-th').forEach(t=>t.classList.remove('sel'));th.classList.add('sel');showToast('Achtergrond gewijzigd');});
-    el.appendChild(th);
+  const container=document.getElementById('bgCategoriesContainer');container.innerHTML='';
+  const categories={};
+  WPS.forEach(wp=>{if(!categories[wp.cat])categories[wp.cat]=[];categories[wp.cat].push(wp);});
+  
+  Object.keys(categories).forEach(catName=>{
+    // Label
+    const catLbl=document.createElement('div');catLbl.className='sl';
+    catLbl.textContent=catName==='Natuur'?'Natuur':catName;
+    container.appendChild(catLbl);
+    
+    // Grid
+    const grid=document.createElement('div');grid.className='bg-grid';
+    categories[catName].forEach(wp=>{
+      const th=document.createElement('div');th.className='bg-th';
+      if(wp.image){th.style.backgroundImage=`url(${wp.image})`;}else{th.style.background=cfg.dark?wp.dark:wp.light;}
+      th.innerHTML=`<div class="bg-th-lbl">${wp.label}</div>`;
+      if(cfg.bg===wp.id&&!cfg.bgCustom)th.classList.add('sel');
+      th.addEventListener('click',()=>{cfg.bg=wp.id;cfg.bgCustom=null;saveC();applyBg();document.querySelectorAll('.bg-th,.recent-th').forEach(t=>t.classList.remove('sel'));th.classList.add('sel');showToast('Achtergrond gewijzigd');});
+      grid.appendChild(th);
+    });
+    container.appendChild(grid);
   });
 }
 buildBgGrid();
@@ -941,7 +1032,7 @@ function refreshMagTab(){
     const chk=already?'<polyline points="4,10 8,14 16,6"/>':'<circle cx="10" cy="10" r="7.5"/><line x1="10" y1="6.5" x2="10" y2="13.5"/><line x1="6.5" y1="10" x2="13.5" y2="10"/>';
     btn.innerHTML=`<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">${chk}</svg><span>${entry.name}<span class="ov-btn-desc">${entrySet?url:'Schoolnaam nog niet ingesteld'}</span></span>`;
     if(!entrySet){btn.addEventListener('click',()=>showToast('Stel eerst je schoolnaam in bij Magister'));}
-    else if(!already){btn.addEventListener('click',()=>{if(sites.length>=20){showToast('Grid vol');return;}sites.push({name:entry.name,url,icon:entry.path||getFavUrl(url)});saveS();renderGrid();refreshMagTab();showToast(`"${entry.name}" toegevoegd!`);});}
+    else if(!already){btn.addEventListener('click',()=>{if(sites.length>=20){showToast('Grid vol');return;}saveSnapshot();sites.push({name:entry.name,url,icon:entry.path||getFavUrl(url)});saveS();renderGrid();refreshMagTab();showToast(`"${entry.name}" toegevoegd!`);});}
     cont.appendChild(btn);
   });
 }
@@ -993,6 +1084,7 @@ function renderLibCat(catName){
           `"${entry.name}" verwijderen?`,
           'Wil je deze snelkoppeling uit je grid verwijderen?',
           ()=>{
+            saveSnapshot();
             const idx=sites.findIndex(s=>s.url===url);
             if(idx>-1){sites.splice(idx,1);saveS();renderGrid();}
             item.classList.remove('added');badge.textContent='+ toevoegen';
@@ -1002,7 +1094,7 @@ function renderLibCat(catName){
         return;
       }
       if(sites.length>=20){showToast('Grid vol (max 20)');return;}
-      sites.push({name:entry.name,url,icon:entry.path||entry.icon||getFavUrl(url)});
+      saveSnapshot();sites.push({name:entry.name,url,icon:entry.path||entry.icon||getFavUrl(url)});
       saveS();renderGrid();item.classList.add('added');badge.textContent='✓ toegevoegd';
       refreshMagTab();showToast(`"${entry.name}" toegevoegd!`);
     });
@@ -1075,6 +1167,7 @@ applyAll();
 renderGrid();
 syncGlanceUI();
 refreshMagTab();
+updateUndoRedoButtons();
 </script>
 </body>
 </html>
